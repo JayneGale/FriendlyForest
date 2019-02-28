@@ -297,7 +297,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4c3b87a6cde1e5944b4cad7cddefd70d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.37
   m_Pitch: 1
   Loop: 1
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisDogBark: {fileID: 2109692028}
-  nextDogBark: {fileID: 2001936372}
-  nextAudio: {fileID: 1789897726}
+  currentDog: {fileID: 0}
+  nextRightDog: {fileID: 0}
+  XDirection: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -43106,7 +43106,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12730
+  m_Name: pb_Mesh13124
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -43678,7 +43678,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: daf0f501c1deaac469e0dc0c8c5cd32e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -43774,15 +43774,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisDogBark: {fileID: 1279098421}
-  nextDogBark: {fileID: 0}
-  nextAudio: {fileID: 0}
+  currentDog: {fileID: 0}
+  nextRightDog: {fileID: 0}
+  XDirection: 0
 --- !u!43 &776756922
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh16150
+  m_Name: pb_Mesh13086
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -44196,7 +44196,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12926
+  m_Name: pb_Mesh12952
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -45750,9 +45750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisDogBark: {fileID: 1608656471}
-  nextDogBark: {fileID: 1279098421}
-  nextAudio: {fileID: 767163655}
+  currentDog: {fileID: 0}
+  nextRightDog: {fileID: 0}
+  XDirection: 0
 --- !u!1 &1450870760
 GameObject:
   m_ObjectHideFlags: 0
@@ -46328,11 +46328,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789897721}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42174cd63107a3045bc8b5e69de9e5c6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -46428,9 +46428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisDogBark: {fileID: 2001936372}
-  nextDogBark: {fileID: 1608656471}
-  nextAudio: {fileID: 1381622496}
+  currentDog: {fileID: 0}
+  nextRightDog: {fileID: 0}
+  XDirection: 0
 --- !u!1 &1837629225
 GameObject:
   m_ObjectHideFlags: 0
@@ -46615,7 +46615,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19b0683e9be38354690262bcc123e98a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -46711,9 +46711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisDogBark: {fileID: 2001936372}
-  nextDogBark: {fileID: 2109692028}
-  nextAudio: {fileID: 1789897726}
+  currentDog: {fileID: 0}
+  nextRightDog: {fileID: 0}
+  XDirection: 0
 --- !u!1 &1894328782
 GameObject:
   m_ObjectHideFlags: 0
@@ -47721,7 +47721,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12760
+  m_Name: pb_Mesh13236
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -47901,7 +47901,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 147fa86233ad4ca43b3269a13c62b6e2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 101795fcb433253429bb80992f759126, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0.9

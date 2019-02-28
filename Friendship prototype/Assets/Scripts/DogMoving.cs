@@ -5,23 +5,28 @@ using UnityEngine;
 public class DogMoving : MonoBehaviour
 {
 
-    public AudioSource thisDogBark;
-    public AudioSource nextDogBark;
-    public AudioSource nextAudio;
-    AudioSource thisAudio;
+    public GameObject currentDog;
+    public GameObject nextRightDog;
+    public bool XDirection;
+    AudioSource currentDogBark;
+    AudioSource nextDogBark;
+    Animator currentDogAnimator;
+    Animator nextDogAnimator;
 
     void Start () {
-        thisAudio = GetComponent<AudioSource>();
 	}
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            thisAudio.Stop();
-            thisDogBark.Stop();
-  //          nextAudio.Play();
-   //         nextDogBark.Play();
+            currentDogBark = currentDog.GetComponent<AudioSource>();
+            currentDogBark.Stop();
+            nextDogBark = nextRightDog.GetComponent<AudioSource>();
+            nextDogBark.Play();
+            nextDogAnimator = nextRightDog.GetComponent<Animator>();
+
+            currentDogAnimator = currentDog.GetComponent<Animator>();
         }
     }
  }
