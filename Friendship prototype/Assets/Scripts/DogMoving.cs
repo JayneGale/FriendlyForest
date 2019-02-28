@@ -25,8 +25,16 @@ public class DogMoving : MonoBehaviour
             nextDogBark = nextRightDog.GetComponent<AudioSource>();
             nextDogBark.Play();
             nextDogAnimator = nextRightDog.GetComponent<Animator>();
-
+            nextDogAnimator.enabled = true;
+            if (XDirection)
+            {
+                nextDogAnimator.Play("DogY");
+            }
+            else
+                nextDogAnimator.Play("Dog2");
             currentDogAnimator = currentDog.GetComponent<Animator>();
+            currentDogAnimator.enabled = false;
+
         }
     }
  }
