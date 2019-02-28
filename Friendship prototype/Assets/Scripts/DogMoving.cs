@@ -7,7 +7,7 @@ public class DogMoving : MonoBehaviour
 
     public GameObject currentDog;
     public GameObject nextRightDog;
-    public bool XDirection;
+    public bool ZDirection;
     AudioSource currentDogBark;
     AudioSource nextDogBark;
     Animator currentDogAnimator;
@@ -22,19 +22,24 @@ public class DogMoving : MonoBehaviour
         {
             currentDogBark = currentDog.GetComponent<AudioSource>();
             currentDogBark.Stop();
+            currentDogAnimator = currentDog.GetComponent<Animator>();
+            currentDogAnimator.enabled = false;
+            if (nextRightDog == null)
+            {
+                return;
+            } 
             nextDogBark = nextRightDog.GetComponent<AudioSource>();
             nextDogBark.Play();
             nextDogAnimator = nextRightDog.GetComponent<Animator>();
             nextDogAnimator.enabled = true;
-            if (XDirection)
+            if (ZDirection)
             {
                 nextDogAnimator.Play("DogY");
             }
-            else
+            if(!ZDirection)
+            {
                 nextDogAnimator.Play("Dog2");
-            currentDogAnimator = currentDog.GetComponent<Animator>();
-            currentDogAnimator.enabled = false;
-
+            }
         }
     }
  }

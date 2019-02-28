@@ -281,8 +281,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 136055363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.35, y: 2, z: -0.11}
-  m_LocalScale: {x: 12, y: 4, z: 12}
+  m_LocalPosition: {x: 2.57, y: 2, z: -0.11}
+  m_LocalScale: {x: 10.32, y: 3.44, z: 10.32}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -296,9 +296,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4c3b87a6cde1e5944b4cad7cddefd70d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 89ded3e5e7e949843a1cc7d6242549d3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.37
+  m_Volume: 0.46
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -306,8 +306,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.37
+  MaxDistance: 1.16
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: {fileID: 0}
-  nextRightDog: {fileID: 0}
-  XDirection: 0
+  currentDog: {fileID: 2109692027}
+  nextRightDog: {fileID: 2001936369}
+  ZDirection: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -43106,7 +43106,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13124
+  m_Name: pb_Mesh13126
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -43309,7 +43309,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_TagString
@@ -43458,7 +43458,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 444064325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.78, y: 0.5, z: 14.12}
+  m_LocalPosition: {x: -32.7, y: 0.5, z: 13.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1608656475}
@@ -43674,12 +43674,12 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 767163650}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: daf0f501c1deaac469e0dc0c8c5cd32e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 19b0683e9be38354690262bcc123e98a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.41
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -43687,8 +43687,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.34
+  MaxDistance: 1.28
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -43774,15 +43774,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: {fileID: 0}
+  currentDog: {fileID: 1279098418}
   nextRightDog: {fileID: 0}
-  XDirection: 0
+  ZDirection: 1
 --- !u!43 &776756922
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13086
+  m_Name: pb_Mesh13088
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -45001,7 +45001,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279098418}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: a91b7720cba9202458032436dfe7f56b, type: 2}
   m_Animations:
@@ -45037,7 +45037,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 147fa86233ad4ca43b3269a13c62b6e2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 101795fcb433253429bb80992f759126, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 0.9
@@ -45650,12 +45650,12 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1381622491}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 855f3b7b788c0a642aefb99d7d0f37ce, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1dacad1f549fc6945a23879bfd17e53f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.12
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -45663,8 +45663,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.07
+  MaxDistance: 0.95
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -45750,9 +45750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: {fileID: 0}
-  nextRightDog: {fileID: 0}
-  XDirection: 0
+  currentDog: {fileID: 1608656468}
+  nextRightDog: {fileID: 1279098418}
+  ZDirection: 1
 --- !u!1 &1450870760
 GameObject:
   m_ObjectHideFlags: 0
@@ -46041,7 +46041,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608656468}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 60bcde5d224f881439c181dbc120054c, type: 2}
   m_Animations:
@@ -46077,7 +46077,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 147fa86233ad4ca43b3269a13c62b6e2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c666edb49965704c8838c26ca648166, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 0.9
@@ -46316,7 +46316,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789897721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.58, y: 2, z: 10.23}
+  m_LocalPosition: {x: -8.58, y: 2, z: 10.61}
   m_LocalScale: {x: 21.233675, y: 4, z: 9.837796}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46332,8 +46332,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42174cd63107a3045bc8b5e69de9e5c6, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46341,8 +46341,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.29
+  MaxDistance: 1.42
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -46428,9 +46428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: {fileID: 0}
-  nextRightDog: {fileID: 0}
-  XDirection: 0
+  currentDog: {fileID: 2001936369}
+  nextRightDog: {fileID: 1608656468}
+  ZDirection: 0
 --- !u!1 &1837629225
 GameObject:
   m_ObjectHideFlags: 0
@@ -46611,12 +46611,12 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842629304}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19b0683e9be38354690262bcc123e98a, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: e0720e3637f3b044aac5e725692fc191, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.17
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46624,8 +46624,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.24
+  MaxDistance: 0.68
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -46711,9 +46711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fd2cb83b86f9489cd53d61716d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: {fileID: 0}
-  nextRightDog: {fileID: 0}
-  XDirection: 0
+  currentDog: {fileID: 1608656468}
+  nextRightDog: {fileID: 2001936369}
+  ZDirection: 1
 --- !u!1 &1894328782
 GameObject:
   m_ObjectHideFlags: 0
@@ -47222,7 +47222,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2001936369}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 60bcde5d224f881439c181dbc120054c, type: 2}
   m_Animations:
@@ -47238,12 +47238,12 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2001936369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 675162933ba732b4a9f875e3fa11b4fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -47721,7 +47721,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13236
+  m_Name: pb_Mesh13238
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -47901,7 +47901,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 101795fcb433253429bb80992f759126, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 147fa86233ad4ca43b3269a13c62b6e2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0.9
@@ -48060,7 +48060,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109692027}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: a91b7720cba9202458032436dfe7f56b, type: 2}
   m_Animations:
