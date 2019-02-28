@@ -5,41 +5,48 @@ using UnityEngine;
 public class DogMoving : MonoBehaviour
 {
 
-    public GameObject currentDog;
-    public GameObject nextRightDog;
-    public bool ZDirection;
-    AudioSource currentDogBark;
+    public GameObject nextDog;
     AudioSource nextDogBark;
-    Animator currentDogAnimator;
+    public AudioClip[] dogBarks;
     Animator nextDogAnimator;
 
-    void Start () {
-	}
+    private void Start()
+    {
+        if (nextDog == null)
+        {
+            Debug.Log("No dog assigned to " + gameObject.name);
+        }
+        nextDogBark = nextDog.GetComponent<AudioSource>();
+        nextDogAnimator = nextDog.GetComponent<Animator>();
+        if (dogBarks.Length < 1)
+        {
+            Debug.Log("No audio clips assigned to " + gameObject.name);
+            Application.Quit();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            {
+                int barkSelected = Random.Range(0, dogBarks.Length);
+                nextDogBark.PlayOneShot(dogBarks[barkSelected]);
+//I don't want it to play one shot I want it to loop
+                nextDogBark.Play();
+            }
+            nextDogAnimator.enabled = true;
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            currentDogBark = currentDog.GetComponent<AudioSource>();
-            currentDogBark.Stop();
-            currentDogAnimator = currentDog.GetComponent<Animator>();
-            currentDogAnimator.enabled = false;
-            if (nextRightDog == null)
-            {
-                return;
-            } 
-            nextDogBark = nextRightDog.GetComponent<AudioSource>();
-            nextDogBark.Play();
-            nextDogAnimator = nextRightDog.GetComponent<Animator>();
-            nextDogAnimator.enabled = true;
-            if (ZDirection)
-            {
-                nextDogAnimator.Play("DogY");
-            }
-            if(!ZDirection)
-            {
-                nextDogAnimator.Play("Dog2");
-            }
+            nextDogBark.Stop();
+            nextDogAnimator.enabled = false;
         }
     }
- }
+
+}
+
