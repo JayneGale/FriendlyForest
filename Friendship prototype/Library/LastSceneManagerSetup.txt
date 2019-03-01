@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Maze and sound prototype.unity
+- path: Assets/Scenes/ProbuilderStart.unity
   isLoaded: 1
   isActive: 1
