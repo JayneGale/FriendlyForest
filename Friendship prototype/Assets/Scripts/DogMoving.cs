@@ -7,6 +7,7 @@ public class DogMoving : MonoBehaviour
 
     public GameObject nextDog;
     AudioSource nextDogBark;
+    AudioSource forestAmbient;
   //  public AudioClip[] dogBarks;
     Animator nextDogAnimator;
 
@@ -17,6 +18,7 @@ public class DogMoving : MonoBehaviour
             Debug.Log("No dog assigned to " + gameObject.name);
         }
         nextDogBark = nextDog.GetComponent<AudioSource>();
+        forestAmbient = gameObject.GetComponent<AudioSource>();
         nextDogAnimator = nextDog.GetComponent<Animator>();
   /*      if (dogBarks.Length < 1)
         {
@@ -36,7 +38,9 @@ public class DogMoving : MonoBehaviour
 //I don't want it to play one shot I want it to loop
                 }
 */
-           nextDogBark.Play();
+            nextDogBark.Play();
+            forestAmbient.enabled = true;
+            forestAmbient.Play();
 //            }
             nextDogAnimator.enabled = true;
         }
@@ -47,6 +51,7 @@ public class DogMoving : MonoBehaviour
         if (other.tag == "Player")
         {
             nextDogBark.Stop();
+            forestAmbient.Stop();
             nextDogAnimator.enabled = false;
         }
     }
