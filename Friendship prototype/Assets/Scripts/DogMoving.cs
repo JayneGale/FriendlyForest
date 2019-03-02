@@ -7,7 +7,7 @@ public class DogMoving : MonoBehaviour
 
     public GameObject nextDog;
     AudioSource nextDogBark;
-    public AudioClip[] dogBarks;
+  //  public AudioClip[] dogBarks;
     Animator nextDogAnimator;
 
     private void Start()
@@ -18,23 +18,26 @@ public class DogMoving : MonoBehaviour
         }
         nextDogBark = nextDog.GetComponent<AudioSource>();
         nextDogAnimator = nextDog.GetComponent<Animator>();
-        if (dogBarks.Length < 1)
+  /*      if (dogBarks.Length < 1)
         {
             Debug.Log("No audio clips assigned to " + gameObject.name);
             Application.Quit();
         }
+  */
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            {
+  /*          {
                 int barkSelected = Random.Range(0, dogBarks.Length);
                 nextDogBark.PlayOneShot(dogBarks[barkSelected]);
 //I don't want it to play one shot I want it to loop
-                nextDogBark.Play();
-            }
+                }
+*/
+           nextDogBark.Play();
+//            }
             nextDogAnimator.enabled = true;
         }
     }
