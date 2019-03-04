@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DogMoving : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class DogMoving : MonoBehaviour
     public AudioClip[] dogBarks;
     Animator nextDogAnimator;
     AudioClip randomisedClip;
+    public float maxSecondsEachBark;
+    public float maxSecondsTilNextBarking;
+
 
     private void Start()
     {
@@ -31,10 +36,17 @@ public class DogMoving : MonoBehaviour
 
     private void Update()
     { 
-        if (Input.GetKeyDown("E"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            ChooseBark(randomisedClip);
             nextDogBark.Play();
         }
+    }
+
+    private void ChooseBark(AudioClip randomisedClip)
+    {
+        int barkSelected = UnityEngine.Random.Range(0, dogBarks.Length);
+        this.randomisedClip = dogBarks[barkSelected];
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,11 +55,10 @@ public class DogMoving : MonoBehaviour
         {
             forestAmbient.enabled = true;
             forestAmbient.Play();
-            int barkSelected = Random.Range(0, dogBarks.Length);
-            randomisedClip = dogBarks[barkSelected];
+            ChooseBark(randomisedClip);
             nextDogAnimator.enabled = true;
-            //           nextDogBark.Play();
-            //           nextDogBark.PlayOneShot(dogBarks[barkSelected]);
+            nextDogBark.Play();
+   //         nextDogBark.PlayOneShot(dogBarks[barkSelected]);
             //I don't want it to play one shot I want it to loop
         }
     }
