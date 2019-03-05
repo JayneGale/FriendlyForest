@@ -13,40 +13,71 @@ public class DogMoving : MonoBehaviour
     public AudioClip[] dogBarks;
     Animator nextDogAnimator;
     AudioClip randomisedClip;
-    public float maxSecondsEachBark;
-    public float maxSecondsTilNextBarking;
+    public float maxTimeToNextBout;
+    public int maxNumberOfBarks;
+    float timeToNextBout;
+    int barkSelected;
+    int numberOfBarks;
+    public float maxBarkGap;
+ //   float gapBoutTimer;
+    float barkGap;
 
-
-    private void Start()
+    void Start()
     {
         if (nextDog == null)
         {
             Debug.Log("No dog assigned to " + gameObject.name);
         }
-        nextDogBark = nextDog.GetComponent<AudioSource>();
-        forestAmbient = gameObject.GetComponent<AudioSource>();
-        nextDogAnimator = nextDog.GetComponent<Animator>();
+
         if (dogBarks.Length < 1)
         {
             Debug.Log("No audio clips assigned to " + gameObject.name);
             Application.Quit();
         }
-
-    }
-
-    private void Update()
-    { 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (maxTimeToNextBout < 2.0f)
         {
-            ChooseBark(randomisedClip);
-            nextDogBark.Play();
+            maxTimeToNextBout = 2.0f;
         }
+        if (maxBarkGap < 0.5f)
+        {
+            maxBarkGap = 0.5f;
+        }
+
+        nextDogBark = nextDog.GetComponent<AudioSource>();
+        forestAmbient = gameObject.GetComponent<AudioSource>();
+        nextDogAnimator = nextDog.GetComponent<Animator>();
+  //      gapBoutTimer = 0.0f;
+        PlayBarkBout();
+
+        //       InvokeRepeating("PlayBarkBout", 0, timeBetweenBarkBouts);
+        //            Invoke("PlayBarkBout", timeBetweenBouts);
     }
 
-    private void ChooseBark(AudioClip randomisedClip)
+    void PlayBarkBout()
     {
-        int barkSelected = UnityEngine.Random.Range(0, dogBarks.Length);
-        this.randomisedClip = dogBarks[barkSelected];
+        nextDogBark = nextDog.GetComponent<AudioSource>();
+
+        int numberOfBarks = UnityEngine.Random.Range(2, maxNumberOfBarks);
+        for (int i = 0; i < numberOfBarks; i++)
+        {
+            float barkGap = UnityEngine.Random.Range(0.5f, maxBarkGap);
+            Invoke("ChooseBark", barkGap);           
+        }
+
+        timeToNextBout = UnityEngine.Random.Range(2.0f, maxTimeToNextBout);
+//        gapBoutTimer += Time.deltaTime;
+//      if (gapBoutTimer >= timeToNextBout)
+ //       {
+        Invoke("PlayBarkBout", timeToNextBout);
+ //           gapBoutTimer = 0.0f;
+ //       }
+    }
+
+    public void ChooseBark()
+    {
+        barkSelected = UnityEngine.Random.Range(0, dogBarks.Length);
+        nextDogBark.PlayOneShot(dogBarks[barkSelected]);
+ //       gapBarkTimer = 0.0f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,11 +86,9 @@ public class DogMoving : MonoBehaviour
         {
             forestAmbient.enabled = true;
             forestAmbient.Play();
-            ChooseBark(randomisedClip);
             nextDogAnimator.enabled = true;
-            nextDogBark.Play();
-   //         nextDogBark.PlayOneShot(dogBarks[barkSelected]);
-            //I don't want it to play one shot I want it to loop
+            nextDogBark = nextDog.GetComponent<AudioSource>();
+            PlayBarkBout();
         }
     }
 
@@ -67,6 +96,7 @@ public class DogMoving : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            nextDogBark = nextDog.GetComponent<AudioSource>();
             nextDogBark.Stop();
             forestAmbient.Stop();
             nextDogAnimator.enabled = false;
