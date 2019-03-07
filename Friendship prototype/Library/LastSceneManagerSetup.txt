@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Basic navmesh.unity
+- path: Assets/Scenes/LatestScene.unity
   isLoaded: 1
   isActive: 1
