@@ -13,10 +13,11 @@ public class DogWayfinder : MonoBehaviour {
     List<DrawGizmo> dogWayPoints;
 
     bool dogMoving;
-    bool dogWaiting;
+  //  bool dogWaiting;
     bool waiting;
     float waitTime;
     public float totalWaitTime;
+    public int startWayPointIndex;
     int currentWayPointIndex;
 
     NavMeshAgent navmeshAgent;
@@ -26,7 +27,7 @@ public class DogWayfinder : MonoBehaviour {
 	void Start ()
     {
         navmeshAgent = this.GetComponent<NavMeshAgent>();
-   //     nextWaypoint = nextWaypoint.GetComponent<Transform>();
+        Debug.Log(" dogWayPoints.Count is " + dogWayPoints.Count);
 
         if (navmeshAgent == null)
         {
@@ -36,7 +37,7 @@ public class DogWayfinder : MonoBehaviour {
         {
             if (dogWayPoints != null && dogWayPoints.Count >= 2)
             {
-                currentWayPointIndex = 0;
+                currentWayPointIndex = startWayPointIndex;
                 SetDestination();
             }
             else
@@ -52,7 +53,7 @@ public class DogWayfinder : MonoBehaviour {
         if(dogMoving && navmeshAgent.remainingDistance <= 1.0f)
         {
             dogMoving = false;
-            if (dogWaiting)
+            if (waiting)
             {
                 waiting = true;
                 waitTime = 0.0f;
