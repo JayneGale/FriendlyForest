@@ -352,5 +352,3 @@ C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\
 C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\obj\Debug\Assembly-CSharp.dll
 C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\Temp\bin\Debug\UnityEditor.UI.dll
-C:\Users\Jayne\Documents\Git\FriendlyForest\FriendlyForest\Friendship prototype\Temp\bin\Debug\UnityEditor.UI.xml

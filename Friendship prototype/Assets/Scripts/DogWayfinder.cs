@@ -6,39 +6,88 @@ using UnityEngine.AI;
 
 public class DogWayfinder : MonoBehaviour {
 
+   // [SerializeField]
+   // Transform nextWaypoint;
+
     [SerializeField]
-    Transform nextWaypoint;
-    //[SerializeField]
-    //   Transform waypointAfterThat;
+    List<DrawGizmo> dogWayPoints;
+
+    bool dogMoving;
+    bool dogWaiting;
+    bool waiting;
+    float waitTime;
+    public float totalWaitTime;
+    int currentWayPointIndex;
+
     NavMeshAgent navmeshAgent;
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         navmeshAgent = this.GetComponent<NavMeshAgent>();
-        nextWaypoint = nextWaypoint.GetComponent<Transform>();
-        Debug.Log("Navmesh script started");
-        float zpos = nextWaypoint.transform.position.z;
-        float xpos = nextWaypoint.transform.position.x;
-        Debug.Log("Target x position is " + xpos);
-        Debug.Log("Target z position is " + zpos);
+   //     nextWaypoint = nextWaypoint.GetComponent<Transform>();
+
         if (navmeshAgent == null)
         {
             Debug.LogError("NavmeshAgent component is not attached to " + gameObject.name);                
         }
         else
         {
-            SetDestination();
+            if (dogWayPoints != null && dogWayPoints.Count >= 2)
+            {
+                currentWayPointIndex = 0;
+                SetDestination();
+            }
+            else
+            {
+                Debug.LogError("Insufficient Waypoints attached to " + gameObject.name);
+            }
         }
              		
 	}
 
+    public void Update()
+    {
+        if(dogMoving && navmeshAgent.remainingDistance <= 1.0f)
+        {
+            dogMoving = false;
+            if (dogWaiting)
+            {
+                waiting = true;
+                waitTime = 0.0f;
+            }
+            else
+            {
+                ChangeWaypoint();
+                SetDestination();
+            }
+            if (waiting)
+            {
+                waitTime += Time.deltaTime;
+                if(waitTime >= totalWaitTime)
+                {
+                    waiting = false;
+                    ChangeWaypoint();
+                    SetDestination();
+                }
+            }
+        }
+    
+    }
+
+    private void ChangeWaypoint()
+    {
+        currentWayPointIndex = (currentWayPointIndex + 1) % dogWayPoints.Count;
+    }
+
     private void SetDestination()
     {
-        if (nextWaypoint != null)
+        if (dogWayPoints != null)
         {
-            Vector3 targetVector = nextWaypoint.transform.position;
+            Vector3 targetVector = dogWayPoints[currentWayPointIndex].transform.position;
             navmeshAgent.SetDestination(targetVector);
+            dogMoving = true;
         }
     }
 
