@@ -6,38 +6,25 @@ using UnityEngine.AI;
 
 public class DogWayfinder : MonoBehaviour {
 
-    // [SerializeField]
-    // Transform nextWaypoint;
-
-    [SerializeField]
-    int zonePlayerIsIn;
-    //    bool dogMarkingPlace;
-
-    [SerializeField]
-    int nextRightZone;
-   // float totalWaitTime = 3.0f;
     [SerializeField]
     List<DrawGizmo> dogWayPoints;
 
-    //is the dog moving towards its destination
-    bool dogMoving;
-    //is the dog waiting at the current destination
-    bool waiting;
-    // do we want the dog waiting at all - could get rid of this
-    bool markingPlace;
-
-    float waitTimer;
+    //for debugging purposes, otherwise always start at dogwayPoints(0)
     public int startWayPointIndex;
     int currentWayPointIndex;
-    Transform player;
-
     NavMeshAgent navmeshAgent;
+    public static DogWayfinder instance = null;
 
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-        navmeshAgent = this.GetComponent<NavMeshAgent>();
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+ 
+        navmeshAgent = gameObject.GetComponent<NavMeshAgent>();
         Debug.Log(" dogWayPoints.Count is " + dogWayPoints.Count);
-  //      player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (navmeshAgent == null)
         {
@@ -45,73 +32,31 @@ public class DogWayfinder : MonoBehaviour {
         }
         else
         {
-//            if (dogWayPoints != null && dogWayPoints.Count >= 2)
-            if (dogWayPoints != null && dogWayPoints.Count >= 1)
-                {
+            if (dogWayPoints != null && startWayPointIndex<= dogWayPoints.Count)
+            {
                 currentWayPointIndex = startWayPointIndex;
-                SetDestination();
+                SetDestination(currentWayPointIndex);
             }
             else
             {
-                Debug.LogError("No Waypoint attached to " + gameObject.name);
+                Debug.LogError("Either StartWayPoint is outside the List, or there is no Waypoint attached to " + gameObject.name);
             }
         }
 	}
 
-    public void Update()
+    public void SetDestination(int waypointIndex)
     {
-        if (dogMoving && navmeshAgent.remainingDistance <= 1.0f)
-        {
-            dogMoving = false;
-        }
-            ChangeWaypoint();
-            SetDestination();
-            /*            if (markingPlace)
-                        {
-                            waiting = true;
-                            waitTimer = 0.0f;
-                        }
-                        else
-                        {
-                            ChangeWaypoint();
-                            SetDestination();
-                        }
-           */
-        }
-/*
-        if (waiting)
-        {
-            waitTimer += Time.deltaTime;
-
-            if (waitTimer >= totalWaitTime)
-            {
-                waiting = false;
-                ChangeWaypoint();
-                SetDestination();
-            }
-        }
-    
-    }
- */
-     
-    private void ChangeWaypoint()
-    {
-        currentWayPointIndex = (currentWayPointIndex + 1);
-        if (currentWayPointIndex >= dogWayPoints.Count)
-        {
-            currentWayPointIndex = dogWayPoints.Count-1;
-        }
- //           currentWayPointIndex = (currentWayPointIndex + 1) % dogWayPoints.Count;
-    }
-
-    private void SetDestination()
-    {
+        Debug.Log(" SetDestination called on waypoint " + waypointIndex);
+        //IF the List isn't empty
         if (dogWayPoints != null)
         {
-            Vector3 targetVector = dogWayPoints[currentWayPointIndex].transform.position;
+            //If the proposed destination is outside the List, make it inside the List
+            if (waypointIndex >= dogWayPoints.Count)
+            {
+                waypointIndex = dogWayPoints.Count - 1;
+            }
+            Vector3 targetVector = dogWayPoints[waypointIndex].transform.position;
             navmeshAgent.SetDestination(targetVector);
-            dogMoving = true;
         }
     }
-
   }
