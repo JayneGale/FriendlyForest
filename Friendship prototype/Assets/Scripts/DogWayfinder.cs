@@ -13,6 +13,8 @@ public class DogWayfinder : MonoBehaviour {
     public int startWayPointIndex;
     int currentWayPointIndex;
     NavMeshAgent navmeshAgent;
+    AudioSource dogRunAudio;
+    public AudioClip dogRunClip;
     public static DogWayfinder instance = null;
 
     // Use this for initialization
@@ -25,6 +27,9 @@ public class DogWayfinder : MonoBehaviour {
  
         navmeshAgent = gameObject.GetComponent<NavMeshAgent>();
         Debug.Log(" dogWayPoints.Count is " + dogWayPoints.Count);
+        dogRunAudio = gameObject.GetComponent<AudioSource>();
+
+
 
         if (navmeshAgent == null)
         {
@@ -57,6 +62,7 @@ public class DogWayfinder : MonoBehaviour {
             }
             Vector3 targetVector = dogWayPoints[waypointIndex].transform.position;
             navmeshAgent.SetDestination(targetVector);
+            dogRunAudio.PlayOneShot(dogRunClip);
         }
     }
   }

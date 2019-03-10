@@ -1778,6 +1778,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 884f40da84c3bed4199ebc3e71be87e0, type: 3}
   - {fileID: 8300000, guid: 5273ba29c4d024d449fb63f284bde0f4, type: 3}
   - {fileID: 8300000, guid: 4d7321c3c3b3c9247a78179e9ca0853a, type: 3}
+  - {fileID: 8300000, guid: 92922570429dc154f8bd528523ec2439, type: 3}
   maxTimeToBarkBout: 12
   maxNumOfBarks: 6
   maxBarkRest: 2
@@ -1797,6 +1798,7 @@ MonoBehaviour:
   - {fileID: 768278388}
   - {fileID: 101214072}
   startWayPointIndex: 0
+  dogRunClip: {fileID: 8300000, guid: e655003c204c04241a87dfe7290bb6ca, type: 3}
 --- !u!195 &107954894
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -31871,7 +31873,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0c7baecc1c878e648b5ef7c83810afe5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30e0cbc9b36acf54fa055a34501e649e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.276
   m_Pitch: 1
@@ -40608,7 +40610,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh13984
+  m_Name: pb_Mesh15360
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
