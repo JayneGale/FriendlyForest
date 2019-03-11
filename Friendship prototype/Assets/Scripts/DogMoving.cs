@@ -46,8 +46,9 @@ public class DogMoving : MonoBehaviour
         nextDogBark = nextDog.GetComponent<AudioSource>();
         forestAmbient = gameObject.GetComponent<AudioSource>();
         nextDogAnimator = nextDog.GetComponent<Animator>();
+  //      nextDogBark.Play();
   //      gapBoutTimer = 0.0f;
-        PlayBarkBout();
+   //     PlayBarkBout(); all are playing at the same time on start...
 
         //       InvokeRepeating("PlayBarkBout", 0, timeBetweenBarkBouts);
         //            Invoke("PlayBarkBout", timeBetweenBouts);
@@ -87,8 +88,9 @@ public class DogMoving : MonoBehaviour
             forestAmbient.enabled = true;
             forestAmbient.Play();
             nextDogAnimator.enabled = true;
-            nextDogBark = nextDog.GetComponent<AudioSource>();
-            PlayBarkBout();
+            nextDogBark.Play();
+ //           nextDogBark = nextDog.GetComponent<AudioSource>();
+ //           PlayBarkBout();
         }
     }
 
