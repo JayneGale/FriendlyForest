@@ -88,9 +88,10 @@ public class DogMoving : MonoBehaviour
             forestAmbient.enabled = true;
             forestAmbient.Play();
             nextDogAnimator.enabled = true;
-            nextDogBark.Play();
- //           nextDogBark = nextDog.GetComponent<AudioSource>();
- //           PlayBarkBout();
+            nextDogBark = nextDog.GetComponent<AudioSource>();
+            ChooseBark();
+            nextDogBark.PlayOneShot(dogBarks[barkSelected]);
+
         }
     }
 
